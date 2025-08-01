@@ -78,9 +78,10 @@ In the OBS Bucket details page, get the Bucket Name and Endpoint properties valu
 
 {% include image.html post=page.path file="folder-structure.png" alt="Final folder structure" %}
 
-## Creatimg configuration file
+## Creating configuration file
 
 Create the configuration file with Notepad: `C:\rclone\conf\rclone.txt`.
+
 Add the following content:
 
 ```ini
@@ -99,7 +100,7 @@ Replace `{ak}` and `{sk}` with values obtained in `credentials.csv` file
 Replace `{endpoint}` with OBS bucket endpoint
 
 Replace `{region}` with endpoint information between `obs.` and `.myhuaweicloud.com` <br>
-(e.g. if endpoint is `obs.sa-brazil-1\.myhuaweicloud.com`, replace `{region}` with `sa-brazil-1`)
+(e.g. if endpoint is `obs.sa-brazil-1.myhuaweicloud.com`, replace `{region}` with `sa-brazil-1`)
 
 {% include image.html post=page.path file="create-configuration-file.png" alt="config file created" %}
 
