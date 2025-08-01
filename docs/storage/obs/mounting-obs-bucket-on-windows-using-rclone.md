@@ -21,12 +21,10 @@ V1.0 – July 2025
 ## Introduction
 
 Object Storage Service (OBS) is a scalable and secure cloud storage solution provided by Huawei Cloud. 
-In many scenarios, users may want to access their OBS buckets directly from a local file system, especially 
-on Windows machines. This is useful for browsing, reading, and even uploading files as if they were stored locally.
+In many scenarios, users may want to access their OBS buckets directly from a local file system, especially on Windows machines. This is useful for browsing, reading, and even uploading files as if they were stored locally.
 
 Rclone is a powerful open-source command-line tool that supports mounting cloud storage services as virtual drives. 
-This guide will walk you through the process of mounting an OBS bucket on Windows using Rclone, enabling seamless 
-access to your cloud storage directly through the Windows Explorer.
+This guide will walk you through the process of mounting an OBS bucket on Windows using Rclone, enabling seamless access to your cloud storage directly through the Windows Explorer.
 
 ## Creating IAM User and User Group for OBS mounting
 
@@ -34,18 +32,17 @@ It’s recommended to create an exclusive IAM User for mounting in order to rest
 
 [Create user](https://console-intl.huaweicloud.com/iam/#/iam/users/create)
 
-Select **Access Type**: Programmatic access, and **Credential Type**: Access key
-
+Select **Access Type**: Programmatic access, and **Credential Type**: Access key.
 
 {% include image.html post=page.path file="create-user.png" alt="Create a new user" %}
 
-Click on “**create new groups**” to create an User Group for this IAM User and then select it.
+Click on **create new groups** to create an User Group for this IAM User and then select it.
 
 {% include image.html post=page.path file="create-user-group.png" alt="Create a new user group" %}
 
 {% include image.html post=page.path file="select-new-user-group-created.png" alt="Select new user group created" %}
 
-Download the Access Key (this is the only time it’s available). File “credentials.csv” will be saved.
+Download the Access Key (this is the only time it’s available). File `credentials.csv` will be saved.
 
 {% include image.html post=page.path file="download-keys.png" alt="Download the Access Key" %}
 
@@ -53,23 +50,23 @@ Download the Access Key (this is the only time it’s available). File “creden
 
 ## Granting Read/Write Permissions to a User Group on OBS
 
-In IAM > User Groups, click in the “**Authorize**” Operation for the “obs-mount” group
+In IAM > User Groups, click in the **Authorize** Operation for the `obs-mount` group.
 
 https://console-intl.huaweicloud.com/iam/#/iam/groups 
 
 {% include image.html post=page.path file="authorize.png" alt="Authorize user group to R/W OBS" %}
 
-Search for “OBS OperateAccess” and select it. Click “Next”, select “All resources” for Scope and click “OK”
+Search for `OBS OperateAccess` and select it. Click `Next`, select `All resources` for Scope and click `OK`.
 
-{% include image.html post=page.path file="authorize-user-group" alt="Authorize user group" %}
+{% include image.html post=page.path file="authorize-user-group.png" alt="Authorize user group" %}
 
-{% include image.html post=page.path file="select-scope" alt="Selecting scope" %}
+{% include image.html post=page.path file="select-scope.png" alt="Selecting scope" %}
 
 ## Getting OBS Bucket Name and Endpoint
 
 In the OBS Bucket details page, get the Bucket Name and Endpoint properties values:
 
-{% include image.html post=page.path file="get-bucket-details" alt="Getting bucket param" %}
+{% include image.html post=page.path file="get-bucket-details.png" alt="Getting bucket param" %}
 
 ## Download and install WinFSP and Rclone
 
@@ -79,11 +76,11 @@ https://github.com/winfsp/winfsp/releases/download/v1.12.22339/winfsp-1.12.22339
 3. Extract Rclone program files to `C:\rclone`
 4. Create two folders inside it: `C:\rclone\conf` and `C:\rclone\logs`
 
-{% include image.html post=page.path file="folder-structure" alt="Final folder structure" %}
+{% include image.html post=page.path file="folder-structure.png" alt="Final folder structure" %}
 
 ## Creatimg configuration file
 
-Create the configuration file with Notepad: `C:\rclone\conf\rclone.txt`
+Create the configuration file with Notepad: `C:\rclone\conf\rclone.txt`.
 Add the following content:
 
 ```ini
@@ -97,16 +94,18 @@ endpoint = {endpoint}
 acl = private
 ```
 
-Replace {ak} and {sk} with values obtained in credentials.csv file
-Replace {endpoint} with OBS bucket endpoint
-Replace {region} with endpoint information between “obs.” and “.myhuaweicloud.com”
-(e.g. if endpoint is “obs.sa-brazil-1.myhuaweicloud.com”, replace {region} with sa-brazil-1)
+Replace `{ak}` and `{sk}` with values obtained in `credentials.csv` file
 
-{% include image.html post=page.path file="create-configuration-file" alt="config file created" %}
+Replace `{endpoint}` with OBS bucket endpoint
+
+Replace `{region}` with endpoint information between `obs.` and `.myhuaweicloud.com` <br>
+(e.g. if endpoint is `obs.sa-brazil-1\.myhuaweicloud.com`, replace `{region}` with `sa-brazil-1`)
+
+{% include image.html post=page.path file="create-configuration-file.png" alt="config file created" %}
 
 ## Test OBS Bucket mounting
 
-Open PowerShell and run the following command (replace {bucket-name}):
+Open PowerShell and run the following command (`replace {bucket-name}`):
 
 ```shell
 C:\rclone\rclone.exe mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt
@@ -114,9 +113,9 @@ C:\rclone\rclone.exe mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclon
 
 The OBS Bucket should be mounted to the X: drive and it will stay mounted until the command is running in PowerShell.
 
-Press Ctrl+C in PowerShell to unmount
+Press Ctrl+C in PowerShell to unmount.
 
-{% include image.html post=page.path file="test-mount-command" alt="Testing mount command" %}
+{% include image.html post=page.path file="test-mount-command.png" alt="Testing mount command" %}
 
 ## Mount at Windows startup
 
@@ -137,7 +136,7 @@ If you wish to mount the OBS bucket at Windows startup:
     utput (stdout): C:\rclone\logs\mount.txt
     Error (stderr): C:\rclone\logs\mount.txt
     ```
-    {% include image.html post=page.path file="nssm-IO-config" alt="NSSM set  param in IO tab" %} 
+    {% include image.html post=page.path file="nssm-IO-config.png" alt="NSSM set  param in IO tab" %} 
     
 6. In the File Rotation tab, configure the following parameters:
     ```
@@ -155,7 +154,7 @@ If you wish to mount the OBS bucket at Windows startup:
 
     Reboot to confirm it’s working.
     
-    {% include image.html post=page.path file="test-after-reboot" alt="Testing after rebboting" %}
+    {% include image.html post=page.path file="test-after-reboot.png" alt="Testing after rebboting" %}
 
 ## References
 1. OBS – Access Keys (AK/SK): https://support.huaweicloud.com/intl/en-us/productdesc-obs/obs_03_0208.html
