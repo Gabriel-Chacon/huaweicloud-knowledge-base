@@ -121,40 +121,44 @@ Press Ctrl+C in PowerShell to unmount.
 
 If you wish to mount the OBS bucket at Windows startup:
 
-1. Download NSSM: [https://nssm.cc/download](https://nssm.cc/download) 
-2. Open the ZIP file and extract the `nssm-x.xx\win64\nssm.exe` file into the `C:\rclone` folder
-3. Open PowerShell and run the following command: `C:\rclone\nssm.exe install Rclone-OBS`
-4. In the Window that opens, configure the following parameters (Application tab):
-    ```shell
-    Path: C:\rclone\rclone.exe
-    Startup directory: C:\rclone
-    Arguments: mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt
-    ```
-    {% include image.html post=page.path file="nssm-application-config.png" alt="NSSM set  param in application tab" %} 
-5. In the I/O tab, configure the following parameters:
-    ```shell
-    utput (stdout): C:\rclone\logs\mount.txt
-    Error (stderr): C:\rclone\logs\mount.txt
-    ```
-    {% include image.html post=page.path file="nssm-IO-config.png" alt="NSSM set  param in IO tab" %} 
-    
-6. In the File Rotation tab, configure the following parameters:
-    ```
-    Check “Rotate files”
-    Check “Rotate while service is running”
-    Set “Restrict rotation to files bigger than” to “10000000” (~10MB)
-    ```
-    {% include image.html post=page.path file="nssm-fr-config.png" alt="NSSM set  param in file rotation tab" %} 
-7. Click `Install service`
-8. Run the following command:
-    ```shell
-    C:\rclone\nssm.exe start Rclone-OBS
-    ```
-    The OBS bucket should be mounted.
+Download NSSM: [https://nssm.cc/download](https://nssm.cc/download)
 
-    Reboot to confirm it’s working.
+Open the ZIP file and extract the `nssm-x.xx\win64\nssm.exe` file into the `C:\rclone` folder <br>
+Open PowerShell and run the following command: `C:\rclone\nssm.exe install Rclone-OBS` <br>
+
+In the Window that opens, configure the following parameters (Application tab):
+```shell
+Path: C:\rclone\rclone.exe
+Startup directory: C:\rclone
+Arguments: mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt
+```
+{% include image.html post=page.path file="nssm-application-config.png" alt="NSSM set  param in application tab" %} 
+
+In the I/O tab, configure the following parameters:
+```shell
+utput (stdout): C:\rclone\logs\mount.txt
+Error (stderr): C:\rclone\logs\mount.txt
+```
+{% include image.html post=page.path file="nssm-IO-config.png" alt="NSSM set  param in IO tab" %} 
     
-    {% include image.html post=page.path file="test-after-reboot.png" alt="Testing after rebboting" %}
+In the File Rotation tab, configure the following parameters:
+```
+Check “Rotate files”
+Check “Rotate while service is running”
+Set “Restrict rotation to files bigger than” to “10000000” (~10MB)
+```
+{% include image.html post=page.path file="nssm-fr-config.png" alt="NSSM set  param in file rotation tab" %} 
+
+Click `Install service`
+Run the following command:
+```shell
+C:\rclone\nssm.exe start Rclone-OBS
+```
+The OBS bucket should be mounted.
+
+Reboot to confirm it’s working.
+    
+{% include image.html post=page.path file="test-after-reboot.png" alt="Testing after rebboting" %}
 
 ## References
 1. OBS – Access Keys (AK/SK): [https://support.huaweicloud.com/intl/en-us/productdesc-obs/obs_03_0208.html](https://support.huaweicloud.com/intl/en-us/productdesc-obs/obs_03_0208.html)
