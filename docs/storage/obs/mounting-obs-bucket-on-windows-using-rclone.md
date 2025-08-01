@@ -37,17 +37,17 @@ It’s recommended to create an exclusive IAM User for mounting in order to rest
 Select **Access Type**: Programmatic access, and **Credential Type**: Access key
 
 
-{% include image.html post=page.path file="create-user" alt="Create a new user" %}
+{% include image.html post=page.path file="create-user.png" alt="Create a new user" %}
 
 Click on “**create new groups**” to create an User Group for this IAM User and then select it.
 
-{% include image.html post=page.path file="create-user-group" alt="Create a new user group" %}
+{% include image.html post=page.path file="create-user-group.png" alt="Create a new user group" %}
 
-{% include image.html post=page.path file="select-new-user-group-created" alt="Select new user group created" %}
+{% include image.html post=page.path file="select-new-user-group-created.png" alt="Select new user group created" %}
 
 Download the Access Key (this is the only time it’s available). File “credentials.csv” will be saved.
 
-{% include image.html post=page.path file="download-keys" alt="Download the Access Key" %}
+{% include image.html post=page.path file="download-keys.png" alt="Download the Access Key" %}
 
 {% include image.html post=page.path file="default-security-group.jpg" alt="Security group default" %}
 
