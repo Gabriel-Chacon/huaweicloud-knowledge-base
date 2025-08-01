@@ -49,72 +49,116 @@ Download the Access Key (this is the only time it’s available). File “creden
 
 {% include image.html post=page.path file="download-keys.png" alt="Download the Access Key" %}
 
-{% include image.html post=page.path file="default-security-group.jpg" alt="Security group default" %}
+{% include image.html post=page.path file="access-key.png" alt="example of AK" %}
 
-{% include image.html post=page.path file="security-group-rules-remote-access.jpg" alt="Rules in the security group for remote access" %}
+## Granting Read/Write Permissions to a User Group on OBS
 
-## Configuring ECS
+In IAM > User Groups, click in the “**Authorize**” Operation for the “obs-mount” group
 
-Access ECS through the Huawei Cloud console by clicking “Remote Login” and log in with the “root” user and password configured when creating the ECS.
+https://console-intl.huaweicloud.com/iam/#/iam/groups 
 
-{% include image.html post=page.path file="ecs-remote-login.jpg" alt="Remote login to ECS" %}
+{% include image.html post=page.path file="authorize.png" alt="Authorize user group to R/W OBS" %}
 
-Update the ECS packages by typing the following command:
+Search for “OBS OperateAccess” and select it. Click “Next”, select “All resources” for Scope and click “OK”
 
-```shell
-apt update && apt upgrade -y
+{% include image.html post=page.path file="authorize-user-group" alt="Authorize user group" %}
+
+{% include image.html post=page.path file="select-scope" alt="Selecting scope" %}
+
+## Getting OBS Bucket Name and Endpoint
+
+In the OBS Bucket details page, get the Bucket Name and Endpoint properties values:
+
+{% include image.html post=page.path file="get-bucket-details" alt="Getting bucket param" %}
+
+## Download and install WinFSP and Rclone
+
+1. Download and install latest release of WinFSP (only *Core* feature is needed when installing):
+https://github.com/winfsp/winfsp/releases/download/v1.12.22339/winfsp-1.12.22339.msi 
+2. Download Rclone for Windows: https://rclone.org/downloads/
+3. Extract Rclone program files to `C:\rclone`
+4. Create two folders inside it: `C:\rclone\conf` and `C:\rclone\logs`
+
+{% include image.html post=page.path file="folder-structure" alt="Final folder structure" %}
+
+## Creatimg configuration file
+
+Create the configuration file with Notepad: `C:\rclone\conf\rclone.txt`
+Add the following content:
+
+```ini
+[obs]
+type = s3
+provider = HuaweiOBS
+access_key_id = {ak}
+secret_access_key = {sk}
+region = {region}
+endpoint = {endpoint}
+acl = private
 ```
 
-Install the XRDP package, which allows Linux instances to be accessed
-through Windows Remote Desktop.
+Replace {ak} and {sk} with values obtained in credentials.csv file
+Replace {endpoint} with OBS bucket endpoint
+Replace {region} with endpoint information between “obs.” and “.myhuaweicloud.com”
+(e.g. if endpoint is “obs.sa-brazil-1.myhuaweicloud.com”, replace {region} with sa-brazil-1)
+
+{% include image.html post=page.path file="create-configuration-file" alt="config file created" %}
+
+## Test OBS Bucket mounting
+
+Open PowerShell and run the following command (replace {bucket-name}):
 
 ```shell
-apt install xrdp -y
+C:\rclone\rclone.exe mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt
 ```
 
-The GDM3 interface manager is used by default on Linux
-instances. If desired, other lighter managers can be installed, such as SLiM or LightDM. If prompted, change SLiM
-or LightDM to the default manager.
+The OBS Bucket should be mounted to the X: drive and it will stay mounted until the command is running in PowerShell.
 
-```shell
-apt install lightdm -y
-```
+Press Ctrl+C in PowerShell to unmount
 
-Install the desired visual interface. In this step-by-step, the visual interface installed will be Ubuntu Desktop.
+{% include image.html post=page.path file="test-mount-command" alt="Testing mount command" %}
 
-```shell
-apt install ubuntu-desktop
-```
+## Mount at Windows startup
 
-Restart the XRDP service to allow Remote Desktop access.
+If you wish to mount the OBS bucket at Windows startup:
 
-```shell
-service xrdp restart
-```
+1. Download NSSM: https://nssm.cc/download 
+2. Open the ZIP file and extract the `nssm-x.xx\win64\nssm.exe` file into the `C:\rclone` folder
+3. Open PowerShell and run the following command: `C:\rclone\nssm.exe install Rclone-OBS`
+4. In the Window that opens, configure the following parameters (Application tab):
+    ```shell
+    Path: C:\rclone\rclone.exe
+    Startup directory: C:\rclone
+    Arguments: mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt
+    ```
+    {% include image.html post=page.path file="nssm-application-config" alt="NSSM set  param in application tab" %} 
+    5. In the I/O tab, configure the following parameters:
+    ```shell
+    utput (stdout): C:\rclone\logs\mount.txt
+    Error (stderr): C:\rclone\logs\mount.txt
+    ```
+    {% include image.html post=page.path file="nssm-IO-config" alt="NSSM set  param in IO tab" %} 
+    
+6. In the File Rotation tab, configure the following parameters:
+    ```
+    Check “Rotate files”
+    Check “Rotate while service is running”
+    Set “Restrict rotation to files bigger than” to “10000000” (~10MB)
+    ```
+    {% include image.html post=page.path file="nssm-fr-config.png" alt="NSSM set  param in file rotation tab" %} 
+7. Click `Install service`
+8. Run the following command:
+    ```shell
+    C:\rclone\nssm.exe start Rclone-OBS
+    ```
+    The OBS bucket should be mounted.
 
-Enable the XRDP service to enable the XRDP service to start at system boot.
+    Reboot to confirm it’s working.
+    
+    {% include image.html post=page.path file="test-after-reboot" alt="Testing after rebboting" %}
 
-```shell
-systemctl enable xrdp
-```
-
-Start the installed interface manager.
-
-```shell
-systemctl start lightdm.service
-```
-
-Log in to the instance via Remote Desktop. Under “Session”,
-select “Xorg”.
-
-{% include image.html post=page.path file="windows-remote-desktop-connection.jpg" alt="Remote Desktop on Windows" %}
-
-{% include image.html post=page.path file="xrdp-login.jpg" alt="xrdp login interface" %}
-
-{% include image.html post=page.path file="remote-desktop-linux.jpg" alt="Remote Desktop with Linux GUI" %}
-
-**Important: It is worth noting that the graphical interface installed on Linux
-does not work well with Huawei Cloud Console Remote Login. It is
-recommended that Remote Login on the console be used only with
-the Linux terminal.**
+## References
+1. OBS – Access Keys (AK/SK): https://support.huaweicloud.com/intl/en-us/productdesc-obs/obs_03_0208.html
+2. Rclone – Install: https://rclone.org/install/. Access date: 2023-01-27
+3. Rclone – S3 Storage Providers – Huawei OBS: https://rclone.org/s3/#huawei-obs. Access date: 2023-01-27
 
