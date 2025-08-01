@@ -30,7 +30,7 @@ This guide will walk you through the process of mounting an OBS bucket on Window
 
 It’s recommended to create an exclusive IAM User for mounting in order to restrict access to OBS only.
 
-[Create user](https://console-intl.huaweicloud.com/iam/#/iam/users/create)
+[https://console-intl.huaweicloud.com/iam/#/iam/users/create](https://console-intl.huaweicloud.com/iam/#/iam/users/create)
 
 Select **Access Type**: Programmatic access, and **Credential Type**: Access key.
 
@@ -71,8 +71,8 @@ In the OBS Bucket details page, get the Bucket Name and Endpoint properties valu
 ## Download and install WinFSP and Rclone
 
 1. Download and install latest release of WinFSP (only *Core* feature is needed when installing):
-https://github.com/winfsp/winfsp/releases/download/v1.12.22339/winfsp-1.12.22339.msi 
-2. Download Rclone for Windows: https://rclone.org/downloads/
+[https://github.com/winfsp/winfsp/releases/download/v1.12.22339/winfsp-1.12.22339.msi](https://github.com/winfsp/winfsp/releases/download/v1.12.22339/winfsp-1.12.22339.msi)
+2. Download Rclone for Windows: [https://rclone.org/downloads/](https://rclone.org/downloads/)
 3. Extract Rclone program files to `C:\rclone`
 4. Create two folders inside it: `C:\rclone\conf` and `C:\rclone\logs`
 
@@ -121,7 +121,7 @@ Press Ctrl+C in PowerShell to unmount.
 
 If you wish to mount the OBS bucket at Windows startup:
 
-1. Download NSSM: https://nssm.cc/download 
+1. Download NSSM: [https://nssm.cc/download](https://nssm.cc/download) 
 2. Open the ZIP file and extract the `nssm-x.xx\win64\nssm.exe` file into the `C:\rclone` folder
 3. Open PowerShell and run the following command: `C:\rclone\nssm.exe install Rclone-OBS`
 4. In the Window that opens, configure the following parameters (Application tab):
@@ -130,8 +130,8 @@ If you wish to mount the OBS bucket at Windows startup:
     Startup directory: C:\rclone
     Arguments: mount "obs:/{bucket-name}" X: --config C:\rclone\conf\rclone.txt
     ```
-    {% include image.html post=page.path file="nssm-application-config" alt="NSSM set  param in application tab" %} 
-    5. In the I/O tab, configure the following parameters:
+    {% include image.html post=page.path file="nssm-application-config.png" alt="NSSM set  param in application tab" %} 
+5. In the I/O tab, configure the following parameters:
     ```shell
     utput (stdout): C:\rclone\logs\mount.txt
     Error (stderr): C:\rclone\logs\mount.txt
@@ -157,7 +157,7 @@ If you wish to mount the OBS bucket at Windows startup:
     {% include image.html post=page.path file="test-after-reboot.png" alt="Testing after rebboting" %}
 
 ## References
-1. OBS – Access Keys (AK/SK): https://support.huaweicloud.com/intl/en-us/productdesc-obs/obs_03_0208.html
-2. Rclone – Install: https://rclone.org/install/. Access date: 2023-01-27
-3. Rclone – S3 Storage Providers – Huawei OBS: https://rclone.org/s3/#huawei-obs. Access date: 2023-01-27
+1. OBS – Access Keys (AK/SK): [https://support.huaweicloud.com/intl/en-us/productdesc-obs/obs_03_0208.html](https://support.huaweicloud.com/intl/en-us/productdesc-obs/obs_03_0208.html)
+2. Rclone – Install: [https://rclone.org/install/](https://rclone.org/install/). Access date: 2023-01-27
+3. Rclone – S3 Storage Providers – Huawei OBS: [https://rclone.org/s3/#huawei-obs](https://rclone.org/s3/#huawei-obs). Access date: 2023-01-27
 
