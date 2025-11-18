@@ -19,6 +19,9 @@ color_scheme: huawei
 plugins:
   - jekyll-polyglot
 
+includes:
+  - mermaid.html
+
 languages: ["en", "pt"]
 default_lang: "en"
 exclude_from_localization: ["javascript", "images", "css", "public", "sitemap"]
