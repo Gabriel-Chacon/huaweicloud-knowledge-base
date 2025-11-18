@@ -58,6 +58,43 @@ flowchart TD
     class B1,C1,C2,E1,E2,E3 white;
 ```
 
+<pre class="mermaid">
+flowchart TD
+    %% Main Flow
+    A["1️⃣ Home page"] --> B["2️⃣ Register page"]
+
+    subgraph Z[" "]
+        B -.-> B1["Fill in:<br>- Country<br>- Email<br>- Password"]
+    end
+
+    subgraph ZA[" "]
+        B1 --> C["3️⃣ Email/phone verification"]
+        C -.-> C1["Receive and fill in<br>verification code"]
+        C1 -.-> C2["Authorize and login, agree with <b>Huawei Cloud Customer Agreement and Privacy Statement</b>"]
+    end
+
+    C2 --> D["Registration info display"]
+    D --> E["4️⃣ Complete information"]
+
+    subgraph ZB[" "]
+        E -.-> E1["Phone verification"]
+        E1 -.-> E2["Select <b>Enterprise</b> as Tenant Type"]
+        E2 -.-> E3["Fill in:<br>- CNPJ<br>- Contact Name<br>- Designation<br>- Industry"]
+    end
+
+    E3 --> F["✅ Done"]
+
+    classDef main fill:#cce5ff,stroke:#336699,stroke-width:1px;
+    classDef gray fill:#f0f0f0,stroke:#aaa;
+    classDef red fill:#fff,stroke:#000,color:#a00,font-weight:bold;
+    classDef white fill:#fff,stroke:#000,color:#000;
+
+    class A,B,C,E,F main;
+    class D gray;
+    class B1,C1,C2,E1,E2,E3 white;
+</pre>
+
+
 ## Steps
 
 ### 1. Enter the Home Page
