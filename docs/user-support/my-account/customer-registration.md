@@ -64,9 +64,7 @@ flowchart TD
 
 ### 1. Enter the Home Page
 
-Access the official Huawei Cloud website:
-
-[https://www.huaweicloud.com/intl/en-us/](https://www.huaweicloud.com/intl/en-us/)
+Access the official Huawei Cloud website: [https://www.huaweicloud.com/intl/en-us/](https://www.huaweicloud.com/intl/en-us/)
 
 {% include image.html post=page.path file="step1-huawei-cloud-home-page.png" alt="Huawei Cloud Home Page" %}
 
@@ -88,12 +86,12 @@ Provide the required email or mobile verification code to proceed.
 
 Confirm the authorization request and log in to your new account.
 
-{% include image.html post=page.path file="step4-authorize-and-log-in.png" alt="Authorize and Log-in" %}
+{% include image.html post=page.path file="step4-authorize-and-log-in.jpg" alt="Authorize and Log-in" %}
 
 ### 5. Enable Huawei Cloud Services
 
 Proceed to enable available Huawei Cloud services for your account.
-{% include image.html post=page.path file="step5-enable-huawei-cloud-services.png" alt="Enable Huawei Cloud Services" %}
+{% include image.html post=page.path file="step5-enable-huawei-cloud-services.jpg" alt="Enable Huawei Cloud Services" %}
 
 ### 6. Bind Mobile Number
 
@@ -107,12 +105,12 @@ Fill in the requested information.
 
 Enter CNPJ and other fields will be filled automatically (data is retrieved through an API integrated with Serasa)
 
-{% include image.html post=page.path file="step7-complete-account-information_1.png" alt="Complete Account Information 1" %}
-{% include image.html post=page.path file="step7-complete-account-information_2.png" alt="Complete Account Information 2" %}
+{% include image.html post=page.path file="step7-complete-account-information_1.jpg" alt="Complete Account Information 1" %}
+{% include image.html post=page.path file="step7-complete-account-information_2.jpg" alt="Complete Account Information 2" %}
 
 ### 8. Activate Your Account (Not required)
 
 Account activation may not be necessary depending on the selected services.
 
-{% include image.html post=page.path file="step8-enable-your-account" alt="Enable your account" %}
+{% include image.html post=page.path file="step8-enable-your-account.png" alt="Enable your account" %}
 
