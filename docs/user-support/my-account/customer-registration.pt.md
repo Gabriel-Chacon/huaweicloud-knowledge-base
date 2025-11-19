@@ -2,7 +2,8 @@
 title: Registro de Cliente
 layout: default
 parent: Minha Conta
-grand_parent: Suporte ao Usuário 
+grand_parent: Suporte ao Usuário
+lang: pt 
 permalink: /docs/user-support/my-account/customer-registration
 ---
 
