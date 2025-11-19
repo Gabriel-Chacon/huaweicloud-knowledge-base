@@ -1,28 +1,28 @@
 ---
-title: Customer Registration
+title: Registro de Cliente
 layout: default
-parent: My Account
-grand_parent: User Support
+parent: Minha Conta
+grand_parent: Suporte ao Usuário 
 permalink: /docs/user-support/my-account/customer-registration
 ---
 
-# Customer Registration
+# Registro de Cliente
 
 V1.0 – Nov 2025
 
-| **Version**       | **Author**                          | **Description**      |
+| **Versão**        | **Autor**                           | **Descrição**        |
 | ----------------- | ----------------------------------- | -------------------- |
 | V1.0 – 2025-11-19 | Fernando Gabriel Chacon  50037923   | Initial Version      |
 | V1.0 – 2025-11-19 | Gabriel Gutierrez  00817435         | Document Review      |
 
-1. Index
+1. Índice
 {:toc}
 
 ## Introduction
 
-Huawei Cloud provides a global and secure cloud platform. Before accessing cloud services, customers must create and activate their accounts through the official registration portal. This guide provides a complete and structured walkthrough for new customers to complete the registration process successfully.
+A Huawei Cloud fornece uma plataforma de nuvem global e segura. Antes de acessar os serviços de nuvem, os clientes devem criar e ativar suas contas por meio do portal oficial de registro. Este guia oferece um passo a passo completo e estruturado para que novos clientes concluam com sucesso o processo de registro.
 
-## Registration Flow
+## Fluxo de Registro
 
 <pre class="mermaid">
 flowchart TD
@@ -60,52 +60,53 @@ flowchart TD
     class B1,C1,C2,E1,E2,E3 white;
 </pre>
 
-## Steps
+## Etapas
 
-### 1. Enter the Home Page
+### 1. Acessar a Página Inicial
 
-Access the official Huawei Cloud website: [https://www.huaweicloud.com/intl/en-us/](https://www.huaweicloud.com/intl/en-us/)
+Acesse o site oficial da Huawei Cloud: [https://www.huaweicloud.com/intl/en-us/](https://www.huaweicloud.com/intl/en-us/)
 
 {% include image.html post=page.path file="step1-huawei-cloud-home-page.png" alt="Huawei Cloud Home Page" %}
 
-Click the **Sign Up** button in the top-right corner to open the registration portal.
+Clique no botão **Sign Up** no canto superior direito para abrir o portal de registro.
 
 {% include image.html post=page.path file="step2-register-page.png" alt="Register Page" %}
 
-Provide your email, click **Get Code**, enter the verification code received in your inbox, set a password, and click the **Register** button.
+Informe seu e-mail, clique em **Get Code**, insira o código de verificação recebido em sua caixa de entrada, defina uma senha e clique no botão **Register**.
 
-### 2. Complete the Verification
+### 2. Completar a Verificação
 
-This step is optional. If you want to set a security phone number, enter your mobile number, click **Get Code**, enter the SMS verification code, and click **OK**. Otherwise, click **Skip**.
+Nesta etapa opcional, você pode adicionar um número de telefone para aumentar a segurança da conta.
+Se desejar configurá-lo, insira seu número de celular, clique em Get Code, informe o código recebido por SMS e clique em OK. Caso contrário, clique em **Skip**.
 
 {% include image.html post=page.path file="step3-set-security-phone-number.png" alt="Set Security Phone Number" %}
 
-### 3. Authorize and Log In
+### 3. Autorizar e Fazer Login
 
-Confirm the authorization request by clicking the **Authorize** button.
+Confirme a solicitação de autorização clicando no botão **Authorize**.
 
 {% include image.html post=page.path file="step4-authorize-and-log-in.jpg" alt="Authorize and Log-in" %}
 
-### 4. Enable Huawei Cloud Services
+### 4. Ativar os Serviços da Huawei Cloud
 
-Proceed to enable Huawei Cloud services. Accept the customer agreement and the privacy statement, and optionally select the option to receive updates about discounts and promotions. Then click **Enable**
+Prossiga para ativar os serviços da Huawei Cloud. Aceite o acordo do cliente e a declaração de privacidade, e opcionalmente selecione a opção para receber atualizações sobre descontos e promoções. Em seguida, clique em **Enable**.
 
 {% include image.html post=page.path file="step5-enable-huawei-cloud-services.jpg" alt="Enable Huawei Cloud Services" %}
 
-### 5. Bind Mobile Number
+### 5. Vincular Número de Celular
 
-Bind a valid mobile number for account security and identity confirmation. Enter your phone number, click **Send Code**, enter the SMS verification code, and then click **Next**.
+Vincule um número de celular válido para a segurança da conta e verificação de identidade. Insira seu número de telefone, clique em **Send Code**, insira o código de verificação recebido por SMS e clique em **Next**.
 
 {% include image.html post=page.path file="step6-bind-mobile-number.png" alt="Bind Mobile Phone Number" %}
 
-### 6. Complete Account Information
+### 6. Completar as Informações da Conta
 
-Fill in the required information. Enter the CNPJ, and the remaining fields will be filled automatically (the data is retrieved through an API integrated with Serasa).
+Preencha as informações solicitadas. Informe o CNPJ e os demais campos serão preenchidos automaticamente (os dados são obtidos por meio de uma API integrada com a Serasa).
 
 {% include image.html post=page.path file="step7-complete-account-information.png" alt="Complete Account Information 1" %}
 
-### 7. Activate Your Account (Not required)
+### 7. Ativar Sua Conta (Não obrigatório)
 
-Account activation may not be necessary depending on the selected services.
+A ativação da conta pode não ser necessária, dependendo dos serviços selecionados.
 
 {% include image.html post=page.path file="step8-enable-your-account.png" alt="Enable your account" %}
