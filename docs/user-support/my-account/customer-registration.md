@@ -68,49 +68,43 @@ Access the official Huawei Cloud website: [https://www.huaweicloud.com/intl/en-u
 
 {% include image.html post=page.path file="step1-huawei-cloud-home-page.png" alt="Huawei Cloud Home Page" %}
 
-### 2. Open the Registration Page
-
-Open the registration portal:
-
-[https://reg.huaweicloud.com/registerui/intl/register.html?locale=pt-br&service=https://intl.huaweicloud.com/pt-br/](https://reg.huaweicloud.com/registerui/intl/register.html?locale=pt-br&service=https://intl.huaweicloud.com/pt-br/)
+Click the `sign Up` button in the top-right corner to open the registration portal.
 
 {% include image.html post=page.path file="step2-register-page.png" alt="Register Page" %}
 
-### 3. Complete the Verification
+Provide your email, click `Get Code`, enter the verification code received in your inbox, set a password, and click the `Register button`.
 
-Provide the required email or mobile verification code to proceed.
+### 2. Complete the Verification
+
+This step is optional. If you want to set a security phone number, enter your mobile number, click `Get Code`, enter the SMS verification code, and click `OK`. Otherwise, click `Skip`.
 
 {% include image.html post=page.path file="step3-set-security-phone-number.png" alt="Set Security Phone Number" %}
 
-### 4. Authorize and Log In
+### 3. Authorize and Log In
 
-Confirm the authorization request and log in to your new account.
+Confirm the authorization request by clicking the `Authorize and Log In` button.
 
 {% include image.html post=page.path file="step4-authorize-and-log-in.jpg" alt="Authorize and Log-in" %}
 
-### 5. Enable Huawei Cloud Services
+### 4. Enable Huawei Cloud Services
 
-Proceed to enable available Huawei Cloud services for your account.
+Proceed to enable Huawei Cloud services. Accept the customer agreement and the privacy statement, and optionally select the option to receive updates about discounts and promotions. Then click `Enable`
 {% include image.html post=page.path file="step5-enable-huawei-cloud-services.jpg" alt="Enable Huawei Cloud Services" %}
 
-### 6. Bind Mobile Number
+### 5. Bind Mobile Number
 
-Bind a valid mobile number for account security and identity confirmation.
+Bind a valid mobile number for account security and identity confirmation. Enter your phone number, click `Send Code`, enter the SMS verification code, and then click `Next`.
 
 {% include image.html post=page.path file="step6-bind-mobile-number.png" alt="Bind Mobile Phone Number" %}
 
-### 7. Complete Account Information
+### 6. Complete Account Information
 
-Fill in the requested information.
+Fill in the required information. Enter the CNPJ, and the remaining fields will be filled automatically (the data is retrieved through an API integrated with Serasa).
 
-Enter CNPJ and other fields will be filled automatically (data is retrieved through an API integrated with Serasa)
+{% include image.html post=page.path file="step7-complete-account-information.png" alt="Complete Account Information 1" %}
 
-{% include image.html post=page.path file="step7-complete-account-information_1.jpg" alt="Complete Account Information 1" %}
-{% include image.html post=page.path file="step7-complete-account-information_2.jpg" alt="Complete Account Information 2" %}
-
-### 8. Activate Your Account (Not required)
+### 7. Activate Your Account (Not required)
 
 Account activation may not be necessary depending on the selected services.
 
 {% include image.html post=page.path file="step8-enable-your-account.png" alt="Enable your account" %}
-
