@@ -82,7 +82,7 @@ This step is optional. If you want to set a security phone number, enter your mo
 
 ### 3. Authorize and Log In
 
-Confirm the authorization request by clicking the `Authorize and Log In` button.
+Confirm the authorization request by clicking the `Authorize` button.
 
 {% include image.html post=page.path file="step4-authorize-and-log-in.jpg" alt="Authorize and Log-in" %}
 
