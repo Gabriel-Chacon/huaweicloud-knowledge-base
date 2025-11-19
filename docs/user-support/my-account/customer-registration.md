@@ -12,8 +12,8 @@ V1.0 – Nov 2025
 
 | **Version**       | **Author**                          | **Description**      |
 | ----------------- | ----------------------------------- | -------------------- |
-| V1.0 – 2025-11-17 | Fernando Gabriel Chacon  50037923   | Initial Version      |
-| V1.0 – 2025-11-17 | Gabriel Gutierrez  00817435         | Document Review      |
+| V1.0 – 2025-11-19 | Fernando Gabriel Chacon  50037923   | Initial Version      |
+| V1.0 – 2025-11-19 | Gabriel Gutierrez  00817435         | Document Review      |
 
 1. Index
 {:toc}
@@ -68,32 +68,32 @@ Access the official Huawei Cloud website: [https://www.huaweicloud.com/intl/en-u
 
 {% include image.html post=page.path file="step1-huawei-cloud-home-page.png" alt="Huawei Cloud Home Page" %}
 
-Click the `sign Up` button in the top-right corner to open the registration portal.
+Click the **Sign Up** button in the top-right corner to open the registration portal.
 
 {% include image.html post=page.path file="step2-register-page.png" alt="Register Page" %}
 
-Provide your email, click `Get Code`, enter the verification code received in your inbox, set a password, and click the `Register button`.
+Provide your email, click **Get Code**, enter the verification code received in your inbox, set a password, and click the **Register button**.
 
 ### 2. Complete the Verification
 
-This step is optional. If you want to set a security phone number, enter your mobile number, click `Get Code`, enter the SMS verification code, and click `OK`. Otherwise, click `Skip`.
+This step is optional. If you want to set a security phone number, enter your mobile number, click **Get Code**, enter the SMS verification code, and click **OK**. Otherwise, click **Skip**.
 
 {% include image.html post=page.path file="step3-set-security-phone-number.png" alt="Set Security Phone Number" %}
 
 ### 3. Authorize and Log In
 
-Confirm the authorization request by clicking the `Authorize` button.
+Confirm the authorization request by clicking the **Authorize** button.
 
 {% include image.html post=page.path file="step4-authorize-and-log-in.jpg" alt="Authorize and Log-in" %}
 
 ### 4. Enable Huawei Cloud Services
 
-Proceed to enable Huawei Cloud services. Accept the customer agreement and the privacy statement, and optionally select the option to receive updates about discounts and promotions. Then click `Enable`
+Proceed to enable Huawei Cloud services. Accept the customer agreement and the privacy statement, and optionally select the option to receive updates about discounts and promotions. Then click **Enable**
 {% include image.html post=page.path file="step5-enable-huawei-cloud-services.jpg" alt="Enable Huawei Cloud Services" %}
 
 ### 5. Bind Mobile Number
 
-Bind a valid mobile number for account security and identity confirmation. Enter your phone number, click `Send Code`, enter the SMS verification code, and then click `Next`.
+Bind a valid mobile number for account security and identity confirmation. Enter your phone number, click **Send Code**, enter the SMS verification code, and then click **Next**.
 
 {% include image.html post=page.path file="step6-bind-mobile-number.png" alt="Bind Mobile Phone Number" %}
 
