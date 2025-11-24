@@ -113,13 +113,13 @@ código de verificação recebido por SMS e cli em **Próximo**.
 
 ### 6. Completar as Informações da Conta
 
-Preencher as informações solicitadas. Informar o CNPJ e os demais campos
-solicitados e clicar em **Próximo**.
+Preencha as informações solicitadas. Informe o CNPJ e os demais campos
+solicitados e clique em **Próximo**.
 
 {% include image.html post=page.path file="step7-complete-account-information_pt.png" alt="Complete Account Information 1" %}
 
 ### 7. Ativar Sua Conta
 
-Escolher a opção que melhor se adequa ao seu caso.
+Escolha a opção que melhor se adequa ao seu caso.
 
 {% include image.html post=page.path file="step8-enable-your-account_pt.png" alt="Enable your account" %}
