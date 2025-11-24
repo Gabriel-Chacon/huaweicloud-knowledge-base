@@ -100,7 +100,7 @@ Bind a valid mobile number for account security and identity confirmation. Enter
 
 ### 6. Complete Account Information
 
-Fill in the required information. Enter the CNPJ, and the remaining fields requested.
+Fill in the required information. Enter the CNPJ and the remaining fields requested and click **Next**.
 
 {% include image.html post=page.path file="step7-complete-account-information.png" alt="Complete Account Information 1" %}
 

@@ -71,7 +71,7 @@ Acessar o site oficial da Huawei Cloud: [https://www.huaweicloud.com/intl/pt-br/
 
 Clicar no botão **Inscrever-se** no canto superior direito para abrir o portal de registro.
 
-{% include image.html post=page.path file="step2-register-page.png" alt="Register Page" %}
+{% include image.html post=page.path file="step2-register-page_pt.png" alt="Register Page" %}
 
 Informar seu e-mail, clicar em **Obter Código**, inserir o código de verificação recebido em sua caixa de entrada, definir uma senha e clicar no botão **Registro**.
 
@@ -102,7 +102,7 @@ Vincular um número de celular válido para a segurança da conta e verificaçã
 
 ### 6. Completar as Informações da Conta
 
-Preencher as informações solicitadas. Informar o CNPJ e os demais campos solicitados.
+Preencher as informações solicitadas. Informar o CNPJ e os demais campos solicitados e clicar em **Próximo**.
 
 {% include image.html post=page.path file="step7-complete-account-information_pt.png" alt="Complete Account Information 1" %}
 
