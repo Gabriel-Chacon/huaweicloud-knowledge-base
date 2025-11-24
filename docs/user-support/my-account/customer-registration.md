@@ -100,12 +100,12 @@ Bind a valid mobile number for account security and identity confirmation. Enter
 
 ### 6. Complete Account Information
 
-Fill in the required information. Enter the CNPJ, and the remaining fields will be filled automatically (the data is retrieved through an API integrated with Serasa).
+Fill in the required information. Enter the CNPJ, and the remaining fields requested.
 
 {% include image.html post=page.path file="step7-complete-account-information.png" alt="Complete Account Information 1" %}
 
-### 7. Activate Your Account (Not required)
+### 7. Activate Your Account
 
-Account activation may not be necessary depending on the selected services.
+Choose the option that best suits your case.
 
 {% include image.html post=page.path file="step8-enable-your-account.png" alt="Enable your account" %}
